@@ -4,6 +4,8 @@ public class EquationResolver {
 
     //String form =  "x^3+2x^2+10x-20";
 
+    static double euler = 2.718281828;
+
     public static String resolve(String forms, String xValue) {
         StringBuilder builder = new StringBuilder(forms);
 
@@ -25,7 +27,15 @@ public class EquationResolver {
                     i += xValue.length()-1;
                 }
             }
+
+            if (builder.charAt(i) == 'e'){
+                builder.deleteCharAt(i);
+                builder.insert(i, euler);
+            }
+
+
         }
+
         return builder.toString();
     }
 }

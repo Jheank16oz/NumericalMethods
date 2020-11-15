@@ -10,11 +10,12 @@ public class EquationResolver {
         StringBuilder builder = new StringBuilder(forms);
 
         for (int i = 0; i < builder.length(); i++) {
+            // replace incognit
             if (builder.charAt(i) == 'x'){
                 if (i > 0){
                     char possibleNumber = builder.charAt(i-1);
                     builder.deleteCharAt(i);
-                    if (possibleNumber >= 48 && possibleNumber <= 57){
+                    if (isNumber(possibleNumber)){
                         builder.insert(i,"*"+xValue);
                         i += ("*" +xValue).length()-1;
                     }else {
@@ -28,14 +29,43 @@ public class EquationResolver {
                 }
             }
 
+            // single number problem .0
+                if (isNumber(builder.charAt(i))){
+                    if (i == 0 && i < builder.length()-1){
+                        if (!isDigit(builder.charAt(i+1))){
+                            builder.insert(i+1,".0");
+                            i+=2;
+                        }
+                    }else if (!isDigit(builder.charAt(i-1)) && i == builder.length()-1){
+                        builder.insert(i+1, ".0");
+                        i+=2;
+                    }else if (!isDigit(builder.charAt(i-1)) && !isDigit(builder.charAt(i+1))){
+                        builder.insert(i+1, ".0");
+                        i+=2;
+                    }
+                }
+
+
+
+            //euler problem
             if (builder.charAt(i) == 'e'){
                 builder.deleteCharAt(i);
                 builder.insert(i, euler);
             }
 
 
+
+
         }
 
         return builder.toString();
+    }
+
+    private static boolean isNumber(char charAt) {
+        return charAt >= 48 && charAt <= 57;
+    }
+
+    private static boolean isDigit(char charAt){
+        return isNumber(charAt) || charAt == '.';
     }
 }

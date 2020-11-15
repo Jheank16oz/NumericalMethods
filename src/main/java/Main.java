@@ -5,22 +5,28 @@ public class Main {
         /*Presentation mPresentation = new Presentation();
         mPresentation.display();*/
 
-
-        //fixedPoint();
-
-        Integration mIntegration = new Integration(14, 0, 1, "4/(1+x^2)");
-        mIntegration.execute();
-        System.out.println(mIntegration.getIntegral());
-
-        //calculate(EquationResolver.resolve("e^52",""));
+        diferentiation();
     }
 
 
-    private static double calculate(String form){
+    private static void diferentiation() {
+        Diferentiation mDiferentiation = new Diferentiation("x^(1/2)", 9, 0.005, 0.1);
+        mDiferentiation.execute();
+        System.out.println(mDiferentiation.getM1() +" "+ mDiferentiation.getM2() +" "+ mDiferentiation.getM3());
+
+    }
+
+
+    public  static void integration(){
+        Integration mIntegration = new Integration(14, 0, 1, "4/(1+x^2)");
+        mIntegration.execute();
+        System.out.println(mIntegration.getIntegral());
+    }
+
+    private static double calcule(String form){
 
         SpelExpressionParser parser = new SpelExpressionParser();
         double value = parser.parseExpression(form).getValue(Double.class);
-        System.out.println(value);
         return value;
     }
 

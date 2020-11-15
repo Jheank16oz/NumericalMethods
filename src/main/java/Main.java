@@ -1,11 +1,22 @@
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         /*Presentation mPresentation = new Presentation();
         mPresentation.display();*/
 
-        diferentiation();
+        //diferentiation();
+
+        ArrayList<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(-1,1));
+        coordinates.add(new Coordinate(0,2));
+        coordinates.add(new Coordinate(1,-1));
+        coordinates.add(new Coordinate(2,2));
+        DirectPolynomialLagrange directPolynomialLagrange = new DirectPolynomialLagrange(coordinates, 13);
+        directPolynomialLagrange.execute();
+        System.out.println(directPolynomialLagrange.getResult());
     }
 
 
@@ -13,7 +24,6 @@ public class Main {
         Diferentiation mDiferentiation = new Diferentiation("x^(1/2)", 9, 0.005, 0.1);
         mDiferentiation.execute();
         System.out.println(mDiferentiation.getM1() +" "+ mDiferentiation.getM2() +" "+ mDiferentiation.getM3());
-
     }
 
 

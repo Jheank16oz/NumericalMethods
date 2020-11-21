@@ -9,7 +9,7 @@ public class Bisection {
     double xa = 0;
     double xb = 0;
     double xc = 0;
-    ArrayList<Double> result = new ArrayList<Double>();
+    private ArrayList<Double> result = new ArrayList<Double>();
 
     public ArrayList<Double> getResult() {
         return result;

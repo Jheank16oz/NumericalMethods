@@ -27,14 +27,6 @@ public class Diferentiation {
     private double m2;
     private double m3;
 
-
-    public Diferentiation(String equation, double x0, double deltaX, double h) {
-        this.equation = equation;
-        this.x0 = x0;
-        this.deltaX = deltaX;
-        this.h = h;
-    }
-
     public Diferentiation(String equation, double x0, double h) {
         this.equation = equation;
         this.x0 = x0;
@@ -43,7 +35,7 @@ public class Diferentiation {
         deltaX = h / 2;
     }
 
-    public Diferentiation(String equation, Double x0, Double deltaX) {
+    public Diferentiation(String equation, Double x0, Double deltaX, boolean deltax) {
         this.equation = equation;
         this.x0 = x0;
         this.deltaX = deltaX;

@@ -1,4 +1,4 @@
-package contract;
+import java.util.ArrayList;
 
 public interface Contract {
 
@@ -13,6 +13,8 @@ public interface Contract {
         void displayDiferentiationResult(String value);
 
         void displayIntegrationResult(String valueOf);
+
+        void displayLagrange(String result);
     }
 
     interface Presenter{
@@ -26,5 +28,7 @@ public interface Contract {
         void calculateDiferentiation(String txt1, Double x0, Double deltax, Double h);
 
         void calculateIntegration(String txt1, Double a, Double b, int n);
+
+        void calculateLagrange(ArrayList<Coordinate> coordinates, Double x);
     }
 }

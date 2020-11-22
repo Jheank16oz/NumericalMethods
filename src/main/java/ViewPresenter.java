@@ -1,5 +1,3 @@
-import contract.Contract;
-
 import java.util.ArrayList;
 
 public class ViewPresenter implements Contract.Presenter {
@@ -54,6 +52,13 @@ public class ViewPresenter implements Contract.Presenter {
         Integration mIntegration = new Integration(n,a,b,txt1);
         mIntegration.execute();
         view.displayIntegrationResult(String.valueOf(mIntegration.getIntegral()));
+    }
+
+    @Override
+    public void calculateLagrange(ArrayList<Coordinate> coordinates, Double x) {
+        DirectPolynomialLagrange mDirectPolynomialLagrange = new DirectPolynomialLagrange(coordinates, x);
+        mDirectPolynomialLagrange.execute();
+        view.displayLagrange(String.valueOf(mDirectPolynomialLagrange.getResult()));
     }
 
 }

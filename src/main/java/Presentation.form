@@ -1,21 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Presentation">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="820" height="1243"/>
+      <xy x="20" y="20" width="1169" height="1617"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="1a3ba" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="dce4d" binding="Lagrange" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="1" vgap="-1">
         <margin top="0" left="80" bottom="0" right="80"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false">
             <maximum-size width="-1" height="400"/>
           </grid>
         </constraints>
         <properties/>
+        <border type="none"/>
+        <children>
+          <scrollpane id="e6000">
+            <constraints>
+              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="30"/>
+                <preferred-size width="335" height="17"/>
+                <maximum-size width="200" height="30"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="3b87f" class="javax.swing.JTextArea" binding="textArea6" default-binding="true">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+          <component id="fe22" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="327" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Punto x"/>
+            </properties>
+          </component>
+          <component id="90747" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Punto y"/>
+            </properties>
+          </component>
+          <component id="eaa97" class="javax.swing.JSpinner" binding="spinner15" default-binding="true">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="60" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="cf0b" class="javax.swing.JButton" binding="eliminarButton" default-binding="true">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="100" height="-1"/>
+                <preferred-size width="223" height="30"/>
+                <maximum-size width="100" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <actionCommand value="Eliminar selección"/>
+              <text value="eliminar"/>
+            </properties>
+          </component>
+          <component id="2bbb5" class="javax.swing.JSpinner" binding="spinner14" default-binding="true">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="60" height="-1"/>
+                <preferred-size width="-1" height="30"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="394bd" class="javax.swing.JButton" binding="agregarButton" default-binding="true">
+            <constraints>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <actionCommand value="Agregar  Coordenada"/>
+              <text value="Agregar"/>
+            </properties>
+          </component>
+          <scrollpane id="a5c79">
+            <constraints>
+              <grid row="3" column="0" row-span="4" col-span="1" vsize-policy="7" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="30"/>
+                <preferred-size width="223" height="128"/>
+                <maximum-size width="200" height="200"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="d65f" class="javax.swing.JList" binding="list1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <dragEnabled value="true"/>
+                  <valueIsAdjusting value="true"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+          <component id="a880c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="223" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Coordenadas ( x , y)"/>
+            </properties>
+          </component>
+          <component id="48334" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="296" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Resultado"/>
+            </properties>
+          </component>
+          <component id="52ab2" class="javax.swing.JSpinner" binding="spinner16" default-binding="true">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="60" height="-1"/>
+                <preferred-size width="223" height="30"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="9670a" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="223" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Valor de la incognita x"/>
+            </properties>
+          </component>
+          <component id="c7c77" class="javax.swing.JButton" binding="calcularButton5" default-binding="true">
+            <constraints>
+              <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="144" height="30"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Calcular"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="1a3ba" binding="integration" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="80" bottom="0" right="80"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <maximum-size width="-1" height="400"/>
+          </grid>
+        </constraints>
+        <properties>
+          <visible value="false"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="35e0b" class="javax.swing.JTextField" binding="textField6" default-binding="true">
@@ -110,7 +267,7 @@
       <grid id="abf82" binding="diferentiation" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="80" bottom="0" right="80"/>
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <maximum-size width="-1" height="350"/>
           </grid>
         </constraints>
@@ -216,7 +373,7 @@
       <grid id="6db29" binding="fixedPont" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="80" bottom="0" right="80"/>
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <maximum-size width="-1" height="400"/>
           </grid>
         </constraints>
@@ -303,7 +460,7 @@
       <grid id="b466e" binding="bisection" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="80" bottom="0" right="80"/>
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <maximum-size width="800" height="400"/>
           </grid>
         </constraints>
@@ -396,7 +553,7 @@
       <grid id="15e2a" binding="main" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <visible value="false"/>
@@ -466,7 +623,7 @@
       <grid id="fde0" binding="newtonRapshon" layout-manager="GridLayoutManager" row-count="7" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <maximum-size width="800" height="400"/>
           </grid>
         </constraints>

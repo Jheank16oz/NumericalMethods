@@ -1,4 +1,3 @@
-import contract.Contract;
 import listener.SimpleMouseListener;
 
 import javax.swing.*;
@@ -6,6 +5,8 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Presentation implements MouseListener, Contract.View {
     private final ViewPresenter mPresenter;
@@ -60,6 +61,16 @@ public class Presentation implements MouseListener, Contract.View {
     private JSpinner spinner13;
     private JTextArea textArea5;
     private JButton calcularButton3;
+    private JPanel integration;
+    private JPanel Lagrange;
+    private JSpinner spinner14;
+    private JSpinner spinner15;
+    private JButton agregarButton;
+    private JList list1;
+    private JTextArea textArea6;
+    private JButton calcularButton5;
+    private JButton eliminarButton;
+    private JSpinner spinner16;
 
     JFrame mainJFrame;
 
@@ -93,6 +104,7 @@ public class Presentation implements MouseListener, Contract.View {
 
         allowSpinnerDoubleValue(spinner11);
         allowSpinnerDoubleValue(spinner12);
+        allowSpinnerDoubleValue(spinner16);
 
         calcularButton.addMouseListener(new SimpleMouseListener() {
             @Override
@@ -168,6 +180,43 @@ public class Presentation implements MouseListener, Contract.View {
 
         });
 
+        DefaultListModel<Coordinate> model = new DefaultListModel<Coordinate>();
+        list1.setModel(model);
+        list1.setDragEnabled(true);
+
+        agregarButton.addMouseListener(new SimpleMouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                int a = (int) spinner15.getValue();
+                int b = (int) spinner14.getValue();
+
+                model.addElement(new Coordinate( a,b));
+
+
+            }
+        });
+
+        eliminarButton.addMouseListener(new SimpleMouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                int index = list1.getSelectedIndex();
+                if (index > -1) {
+                    model.remove(index);
+                }
+            }
+        });
+
+        calcularButton5.addMouseListener(new SimpleMouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                ArrayList<Coordinate> coordinates = Collections.list(model.elements());
+                Double x = (Double) spinner16.getValue();
+                mPresenter.calculateLagrange(coordinates, x);
+            }
+        });
     }
 
     private void allowSpinnerDoubleValue(JSpinner spinner) {
@@ -249,4 +298,10 @@ public class Presentation implements MouseListener, Contract.View {
     public void displayIntegrationResult(String result) {
         textArea5.setText(result);
     }
+
+    @Override
+    public void displayLagrange(String result) {
+        textArea6.setText(result);
+    }
+
 }

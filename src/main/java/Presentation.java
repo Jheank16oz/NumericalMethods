@@ -3,20 +3,13 @@ import listener.SimpleMouseListener;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Presentation implements MouseListener, Contract.View {
+public class Presentation implements Contract.View {
     private final ViewPresenter mPresenter;
     private JPanel panel1;
-    private JButton raicesNewtonRapshonButton;
-    private JButton raicesBisectionButton;
-    private JButton raicesPuntoFijoButton;
-    private JButton derivacionDiferenciaciónButton;
-    private JButton integraciónButton;
-    private JButton polinomioDirectoButton;
     //newton Rapshon
     private JTextField textField1;
     private JTextField textField2;
@@ -42,7 +35,6 @@ public class Presentation implements MouseListener, Contract.View {
 
     private JPanel fixedPont;
     private JPanel bisection;
-    private JPanel main;
     private JPanel newtonRapshon;
     private JPanel diferentiation;
 
@@ -71,27 +63,23 @@ public class Presentation implements MouseListener, Contract.View {
     private JButton calcularButton5;
     private JButton eliminarButton;
     private JSpinner spinner16;
+    private JTabbedPane tabbedPane1;
 
     JFrame mainJFrame;
 
     public Presentation() {
-        this.mainJFrame = new JFrame("App");
+        this.mainJFrame = new JFrame();
         mPresenter = new ViewPresenter(this);
     }
 
     public void display() {
         mainJFrame.setContentPane(panel1);
-        mainJFrame.setMinimumSize(new Dimension(800, 800));
+        mainJFrame.setMinimumSize(new Dimension(800, 500));
         mainJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainJFrame.setLocationRelativeTo(null);
         mainJFrame.pack();
         mainJFrame.setVisible(true);
 
-        raicesNewtonRapshonButton.addMouseListener(this);
-        raicesBisectionButton.addMouseListener(this);
-        raicesPuntoFijoButton.addMouseListener(this);
-        derivacionDiferenciaciónButton.addMouseListener(this);
-        integraciónButton.addMouseListener(this);
-        polinomioDirectoButton.addMouseListener(this);
 
         allowSpinnerDoubleValue(spinner1);
         allowSpinnerDoubleValue(spinner3);
@@ -231,48 +219,6 @@ public class Presentation implements MouseListener, Contract.View {
         format.setMinimumFractionDigits(2);
     }
 
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        String txt = ((JButton) e.getSource()).getText();
-
-        switch (txt) {
-            case "Raices Newton Rapshon":
-                System.out.println("1");
-                break;
-            case "Raices Bisection":
-                System.out.println("2");
-                break;
-            case "Raices Punto Fijo":
-                System.out.println("3");
-                break;
-            case "Derivacion (Diferenciación)":
-                System.out.println("4");
-                break;
-            case "Integración":
-                System.out.println("5");
-                break;
-            case "Polinomio Directo":
-                System.out.println("6");
-                break;
-        }
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-    }
 
     @Override
     public void displayRapshonResult(String result) {

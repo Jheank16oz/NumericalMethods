@@ -1,6 +1,6 @@
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 
-public class Main {
+public class Runa {
     public static void main(String[] args) {
         Presentation mPresentation = new Presentation();
         mPresentation.display();

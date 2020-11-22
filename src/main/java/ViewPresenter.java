@@ -41,7 +41,7 @@ public class ViewPresenter implements Contract.Presenter {
     @Override
     public void calculateDiferentiation(String txt1, Double x0, Double deltax, Double h) {
 
-        Diferentiation mDiferentiation = new Diferentiation(txt1, x0, deltax);
+        Diferentiation mDiferentiation = new Diferentiation(txt1, x0, deltax, true);
         mDiferentiation.execute();
         String value = String.format("m1 = %s\nm2 = %s\nm3 = %s",mDiferentiation.getM1(),mDiferentiation.getM2(),mDiferentiation.getM3());
         view.displayDiferentiationResult(value);

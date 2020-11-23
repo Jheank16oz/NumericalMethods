@@ -74,7 +74,7 @@ public class Presentation implements Contract.View {
 
     public void display() {
         mainJFrame.setContentPane(panel1);
-        mainJFrame.setMinimumSize(new Dimension(800, 500));
+        mainJFrame.setMinimumSize(new Dimension(1000, 700));
         mainJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainJFrame.setLocationRelativeTo(null);
         mainJFrame.pack();

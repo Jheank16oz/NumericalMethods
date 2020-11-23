@@ -1,7 +1,49 @@
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 
+import javax.swing.*;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import java.awt.*;
+
 public class Runa {
+
+
+    /** Set of standard region names for UIDefaults Keys */
+    private static final String[] COMPONENT_KEYS = new String[]{"ArrowButton", "Button",
+            "CheckBox", "CheckBoxMenuItem", "ColorChooser", "ComboBox",
+            "DesktopPane", "DesktopIcon", "EditorPane", "FileChooser",
+            "FormattedTextField", "InternalFrame",
+            "InternalFrameTitlePane", "Label", "List", "Menu",
+            "MenuBar", "MenuItem", "OptionPane", "Panel",
+            "PasswordField", "PopupMenu", "PopupMenuSeparator",
+            "ProgressBar", "RadioButton", "RadioButtonMenuItem",
+            "RootPane", "ScrollBar", "ScrollBarTrack", "ScrollBarThumb",
+            "ScrollPane", "Separator", "Slider", "SliderTrack",
+            "SliderThumb", "Spinner", "SplitPane", "TabbedPane",
+            "Table", "TableHeader", "TextArea", "TextField", "TextPane",
+            "ToggleButton", "ToolBar", "ToolTip", "Tree", "Viewport"};
+
     public static void main(String[] args) {
+        try {
+
+            UIManager.put("text", Color.decode("#001D29"));
+            NimbusLookAndFeel mNimbus = new NimbusLookAndFeel();
+
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         Presentation mPresentation = new Presentation();
         mPresentation.display();
 
